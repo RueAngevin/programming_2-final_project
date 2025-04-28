@@ -6,4 +6,8 @@ public abstract class Component {
     }
     
     public abstract void print();
+    
+    public String getName() {
+        return name;
+    }
 }

@@ -6,26 +6,28 @@ public class Group extends Component {
     private List<Component> members = new ArrayList<>();
 
     public Group(String name, String bossName) {
-        super(name); // Call the superclass constructor to set the group name
+        super(name);
         this.bossName = bossName;
     }
 
-    // Add a member (can be a worker or another group)
     public void add(Component component) {
         members.add(component);
     }
 
-    // Remove a member from the group
     public void remove(Component component) {
         members.remove(component);
     }
 
-    // Print the group's structure, including the boss and the members
+    public List<Component> getMembers() {
+        return members;
+    }
+
     @Override
     public void print() {
         System.out.println("Group: " + name + ", Boss: " + bossName);
         for (Component member : members) {
-            member.print();  // Print each member (either a worker or a group)
+            member.print();
         }
+        System.out.println();
     }
 }
